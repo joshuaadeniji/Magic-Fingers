@@ -1,3 +1,6 @@
+
+
+
 // Navigation -------------------------------------
 
 function toggleMenu() {
@@ -5,6 +8,26 @@ function toggleMenu() {
     // navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
     navLinks.classList.toggle('active');
   }
+
+
+// slide-up scroll handling
+
+const animatedElements = document.querySelectorAll('.hidden');
+
+function handleScroll() {
+  animatedElements.forEach((element) => {
+    const rect = element.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+    if (isVisible) {
+      element.classList.add('show');
+    }
+  });
+}
+
+
+window.addEventListener('scroll', handleScroll);
+handleScroll();
+
 
 // Testimonial ------------------------------------
 
