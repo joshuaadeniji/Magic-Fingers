@@ -4,8 +4,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 
-
-/* Reset default styles */
 * {
   margin: 0;
   padding: 0;
@@ -21,6 +19,25 @@ body {
   line-height: 1.6;
   color: #333;
 }
+
+/* Custom Scrollbar Style */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 
 /* -------------------------- Header ----------------------- */
 
@@ -253,25 +270,28 @@ header a {
 /* ------------------------------ Footer -------------------------- */
 footer {
   display: flex;
-  padding: 2%;
-  justify-content: space-around;
-  text-align: center;
+  padding: 5%;
+  justify-content: space-between;
   background: #13313c;
   color: #fff;
+  /* margin: 2% auto; */
 }
 
 .rights {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   width: 45%;
-  margin: 2% auto;
+  padding: 2%;
 }
 
 .social-media {
   display: flex;
   gap: 2%;
+  justify-content: center;
+  align-items: center;
   width: 45%;
-  margin: 2% auto;
+  padding: 2%;
 }
 
 /* -------------------------- Slide-up animation -------------------------------- */
@@ -307,14 +327,11 @@ footer {
     position: absolute;
     background-color: rgba(0,0,0,0.9);
     top: 100px;
-    right: 0;
     width: 100%;
-    opacity: 0;
-    visibility: hidden;
+    left: 0;
     padding: 25px 0;
     transform: translateY(-200%);
-    transition: transform 0.3s;
-    z-index: -1;
+    transition: transform 0.5s;
   }
 
   .nav-links li:nth-child(4){
@@ -323,8 +340,6 @@ footer {
 
   .nav-links.active {
     transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
     z-index: 2;
   }
 
@@ -353,5 +368,18 @@ footer {
   }
   .card {
     width:75%;
+  }
+
+  footer {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .social-media {
+    width: 90%;
+    order: -1;
+  }
+  .rights {
+    width: 90%;
   }
 }

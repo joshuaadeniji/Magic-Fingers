@@ -4,13 +4,12 @@
 // Navigation -------------------------------------
 
 function toggleMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    // navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    let navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');
   }
 
 
-// slide-up scroll handling
+// slide-up scroll animation handling
 
 const animatedElements = document.querySelectorAll('.hidden');
 
@@ -24,9 +23,9 @@ function handleScroll() {
   });
 }
 
-
 window.addEventListener('scroll', handleScroll);
 handleScroll();
+
 
 
 // Testimonial ------------------------------------
