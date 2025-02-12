@@ -1,7 +1,14 @@
-
-
-
 // Navigation -------------------------------------
+
+window.addEventListener("scroll", function () {
+  let header = document.querySelector(".header");
+  if (window.scrollY > 50) { // Change background after 50px of scrolling
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+
 
 function toggleMenu() {
     let navLinks = document.querySelector('.nav-links');
@@ -29,37 +36,38 @@ handleScroll();
 
 
 // Testimonial ------------------------------------
+/*
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.querySelector(".testimonial-container");
+  let isDown = false;
+  let startX;
+  let scrollLeft;
 
-const scrollContainer = document.querySelector('.testimonial-container');
+  container.addEventListener("mousedown", (e) => {
+    isDown = true;
+    container.classList.add("active");
+    startX = e.pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+  });
 
-let isDown = false;
-let startX;
-let scrollLeft;
+  container.addEventListener("mouseleave", () => {
+    isDown = false;
+    container.classList.remove("active");
+  });
 
-scrollContainer.addEventListener('mousedown', (e) => {
-  isDown = true;
-  scrollContainer.classList.add('active');
-  startX = e.pageX - scrollContainer.offsetLeft;
-  scrollLeft = scrollContainer.scrollLeft;
-  scrollContainer.style.cursor = "grabbing";
+  container.addEventListener("mouseup", () => {
+    isDown = false;
+    container.classList.remove("active");
+  });
+
+  container.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - container.offsetLeft;
+    const walk = (x - startX) * 2; // Adjust scrolling speed
+    container.scrollLeft = scrollLeft - walk;
+  });
 });
 
-scrollContainer.addEventListener('mouseleave', () => {
-  isDown = false;
-  scrollContainer.classList.remove('active');
-  scrollContainer.style.cursor = "grab";
-});
 
-scrollContainer.addEventListener('mouseup', () => {
-  isDown = false;
-  scrollContainer.classList.remove('active');
-  scrollContainer.style.cursor = "grab";
-});
-
-scrollContainer.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - scrollContainer.offsetLeft;
-  const walk = x - startX; // Distance moved
-  scrollContainer.scrollLeft = scrollLeft - walk;
-});
+*/
