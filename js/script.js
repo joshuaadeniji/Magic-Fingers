@@ -11,10 +11,17 @@ window.addEventListener("scroll", function () {
 
 
 function toggleMenu() {
-    let navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
-  }
+  let header = document.querySelector(".header");
+  // let nav = document.querySelector("nav");
+  let navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
 
+  if (navLinks.classList.contains("active")) {
+    header.classList.add("menu-open");
+  } else {
+    header.classList.remove("menu-open");
+  }
+}
 
 // slide-up scroll animation handling
 
